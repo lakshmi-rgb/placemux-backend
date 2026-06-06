@@ -1,3 +1,7 @@
+const healthRoutes = require("./routes/healthRoutes");
+const passportRoutes = require("./routes/passportRoutes");
+const scoreRoutes = require("./routes/scoreRoutes");
+const assessmentRoutes = require("./routes/assessmentRoutes");
 const profileRoutes = require("./routes/profileRoutes");
 const express = require("express");
 const cors = require("cors");
@@ -35,3 +39,8 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocument)
 );
+
+app.use("/assessment", assessmentRoutes);
+app.use("/score", scoreRoutes);
+app.use("/passport", passportRoutes);
+app.use("/health", healthRoutes);
